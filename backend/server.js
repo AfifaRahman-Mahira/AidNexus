@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Routes (Path corrected to lower case 'routes')
 app.use('/api/auth', require('./routes/authRoutes'));
-
+app.use('/api/applications', require('./routes/applicationRoutes'));
 app.get('/', (req, res) => {
     res.send('AidNexus Server is running and Database is Connected!');
 });
