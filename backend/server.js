@@ -4,13 +4,19 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 const app = express();
+
+// Database Connection
 connectDB();
 
+// Global Middleware
 app.use(cors());
 app.use(express.json());
 
+// Routes (Path corrected to lower case 'routes')
+app.use('/api/auth', require('./routes/authRoutes'));
+
 app.get('/', (req, res) => {
-    res.send('AidNexus Server is running and connected!');
+    res.send('AidNexus Server is running and Database is Connected!');
 });
 
 const PORT = process.env.PORT || 5000;
