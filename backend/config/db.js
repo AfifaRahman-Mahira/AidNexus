@@ -7,7 +7,7 @@ const connectDB = async () => {
         console.log('✅ AidNexus Cloud Database Connected Successfully!');
     } catch (err) {
         console.error('❌ Database Connection Failed: ' + err.message);
-        setTimeout(connectDB, 5000); // Fail hole abar try korbe
+        setTimeout(connectDB, 5000); 
     }
 };
 
