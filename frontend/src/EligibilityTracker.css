@@ -1,0 +1,81 @@
+/* EligibilityTracker Styling */
+.eligibility-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.eligibility-card h3 {
+    color: #1a365d;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+}
+
+.tracker-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.input-group-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group-row input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-group-row input:focus {
+    border-color: #e91e63;
+}
+
+.check-btn {
+    background: #1a365d;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.check-btn:hover {
+    background: #2c5282;
+}
+
+.result-display {
+    margin-top: 20px;
+    padding: 18px;
+    border-left: 6px solid;
+    background: #fdf2f8;
+    border-radius: 10px;
+}
+
+.quick-apply-btn {
+    margin-top: 15px;
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+}
+
+.quick-apply-btn:hover {
+    background: #d81b60;
+}

@@ -7,15 +7,14 @@ const mongoose = require('mongoose');
 const app = express();
 
 // 2. Middleware Configuration
-// CORS must be before routes to allow frontend requests
 app.use(cors({
-    origin: 'http://localhost:3000', // React default port
+    origin: 'http://localhost:3000', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
-app.use(express.json()); // Essential to parse JSON bodies
+app.use(express.json()); 
 
-// 3. Database Connection Logic
+// 3. Database Connection
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/aidnexus');
@@ -28,20 +27,20 @@ const connectDB = async () => {
 connectDB();
 
 // 4. Import Routes
-// Ensure these files exist in your 'routes' folder
 const applicationRoutes = require('./routes/applicationRoutes');
-// const authRoutes = require('./routes/authRoutes'); // Uncomment if you have auth
+const authRoutes = require('./routes/authRoutes'); // <--- MUST BE UNCOMMENTED
 
 // 5. Route Registration
-// This fixes the 'Cannot POST /api/applications' error
+// Ei duto line-e bhul holei 404 error ashe
+app.use('/api/auth', authRoutes); 
 app.use('/api/applications', applicationRoutes);
 
 // Root Route for testing
 app.get('/', (req, res) => {
-    res.send('AidNexus API is running...');
+    res.send('🚀 AidNexus API is running perfectly...');
 });
 
-// 6. 404 Handler (Jodi route khuje na pay)
+// 6. 404 Handler
 app.use((req, res) => {
     res.status(404).json({ message: `Route ${req.originalUrl} not found` });
 });
